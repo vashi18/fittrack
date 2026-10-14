@@ -10,7 +10,7 @@ Responsive layout with automatic dark mode
 Tech
 HTML, CSS, JavaScript, Chart.js
 Run locally
-Clone the repo: `git clone https://github.com/<your-username>/fittrack.git`
+Clone the repo: `git clone https://github.com/vashi_18/fittrack.git`
 Open `index.html` in your browser
 Live demo
 Add your GitHub Pages link here after deploying.

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>FitTrack - Simple Fitness Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.1/chart.umd.min.js"></script>
+</head>
+<body>
+  <header>
+    <h1>💪 FitTrack</h1>
+    <p>Log your workouts and track your weekly goal.</p>
+  </header>
+
+  <main>
+    <section class="card">
+      <h2>Log a workout</h2>
+      <form id="workout-form">
+        <label>Date <input type="date" id="date" required></label>
+        <label>Exercise
+          <select id="exercise">
+            <option>Running</option>
+            <option>Walking</option>
+            <option>Cycling</option>
+            <option>Gym</option>
+            <option>Yoga</option>
+            <option>Swimming</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Duration (min) <input type="number" id="duration" min="1" required></label>
+        <label>Calories burned <input type="number" id="calories" min="0" required></label>
+        <button type="submit">Add workout</button>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2>This week (last 7 days)</h2>
+      <div class="stats">
+        <div><span id="total-min">0</span><small>minutes</small></div>
+        <div><span id="total-cal">0</span><small>calories</small></div>
+        <div><span id="total-workouts">0</span><small>workouts</small></div>
+        <div><span id="streak">0</span><small>day streak</small></div>
+      </div>
+
+      <label class="goal-label">Weekly goal (minutes)
+        <input type="number" id="goal" min="1">
+      </label>
+      <div class="progress"><div id="progress-bar"></div></div>
+      <p id="goal-text"></p>
+    </section>
+
+    <section class="card">
+      <h2>Last 7 days</h2>
+      <canvas id="chart" height="160"></canvas>
+    </section>
+
+    <section class="card">
+      <h2>History</h2>
+      <p id="empty" class="muted">No workouts yet. Add your first one above!</p>
+      <table id="history">
+        <thead>
+          <tr><th>Date</th><th>Exercise</th><th>Min</th><th>Cal</th><th></th></tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </section>
+  </main>
+
+  <footer>Built with HTML, CSS &amp; JavaScript</footer>
+  <script src="script.js"></script>
+</body>
+</html>

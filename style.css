@@ -1,0 +1,91 @@
+:root {
+  --bg: #f4f6f8;
+  --card: #ffffff;
+  --text: #1f2933;
+  --muted: #6b7785;
+  --accent: #16a34a;
+  --danger: #dc2626;
+  --border: #e2e8f0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #111827;
+    --card: #1f2937;
+    --text: #f3f4f6;
+    --muted: #9ca3af;
+    --border: #374151;
+  }
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.5;
+}
+
+header, footer { text-align: center; padding: 1.5rem 1rem; }
+header h1 { margin: 0; }
+header p, footer { color: var(--muted); }
+
+main {
+  max-width: 720px;
+  margin: 0 auto;
+  padding: 0 1rem 1rem;
+  display: grid;
+  gap: 1rem;
+}
+
+.card {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+}
+.card h2 { margin-top: 0; font-size: 1.1rem; }
+
+form { display: grid; gap: 0.75rem; grid-template-columns: repeat(2, 1fr); }
+label { display: flex; flex-direction: column; font-size: 0.85rem; gap: 0.25rem; color: var(--muted); }
+input, select {
+  padding: 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 1rem;
+}
+
+button {
+  grid-column: 1 / -1;
+  padding: 0.7rem;
+  border: none;
+  border-radius: 8px;
+  background: var(--accent);
+  color: #fff;
+  font-size: 1rem;
+  cursor: pointer;
+}
+button:hover { opacity: 0.9; }
+
+.stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; text-align: center; margin-bottom: 1rem; }
+.stats span { display: block; font-size: 1.6rem; font-weight: 700; color: var(--accent); }
+.stats small { color: var(--muted); }
+
+.goal-label { margin-bottom: 0.5rem; }
+.progress { height: 14px; background: var(--border); border-radius: 999px; overflow: hidden; }
+#progress-bar { height: 100%; width: 0; background: var(--accent); transition: width 0.4s; }
+#goal-text { margin: 0.5rem 0 0; font-size: 0.9rem; color: var(--muted); }
+
+table { width: 100%; border-collapse: collapse; font-size: 0.95rem; }
+th, td { text-align: left; padding: 0.5rem 0.25rem; border-bottom: 1px solid var(--border); }
+.delete { background: none; color: var(--danger); padding: 0.2rem 0.5rem; font-size: 1.1rem; grid-column: auto; }
+.muted { color: var(--muted); }
+
+@media (max-width: 520px) {
+  form { grid-template-columns: 1fr; }
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
